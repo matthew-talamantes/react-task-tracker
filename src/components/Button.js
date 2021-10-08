@@ -2,12 +2,13 @@ import React from 'react'
 
 const Button = (props) => {
     return (
-        <button className='btn'>{props.title}</button>
+        <button className='btn' style={{ backgroundColor: props.color}}>{props.text}</button>
     )
 }
 
 Button.defaultProps = {
-    title: 'Submit'
+    text: 'Submit',
+    color: 'grey'
 };
 
 export default Button
