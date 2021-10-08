@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Button = (props) => {
 
@@ -10,6 +11,12 @@ const Button = (props) => {
 Button.defaultProps = {
     text: 'Submit',
     color: 'grey'
+};
+
+Button.propTypes = {
+    onClick: PropTypes.func.isRequired,
+    color: PropTypes.string,
+    text: PropTypes.string
 };
 
 export default Button
