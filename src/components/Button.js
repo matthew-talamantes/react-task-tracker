@@ -2,12 +2,8 @@ import React from 'react'
 
 const Button = (props) => {
 
-    const onClick = () => {
-        window.alert("I've Been Clicked!")
-    };
-
     return (
-        <button onClick={onClick} className='btn' style={{ backgroundColor: props.color}}>{props.text}</button>
+        <button onClick={props.onClick} className='btn' style={{ backgroundColor: props.color}}>{props.text}</button>
     )
 }
 
