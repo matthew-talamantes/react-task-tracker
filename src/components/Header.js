@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Button from './Button'
 
 
 const Header = (props) => {
     return (
         <header className='header'>
             <h1>{(props.name) ? <>{props.title} By {props.name}</> : props.title}</h1>
+            <Button title='Add' />
         </header>
     )
 }
