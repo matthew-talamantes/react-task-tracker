@@ -26,12 +26,17 @@ function App() {
     }
     ]);
 
+    // Delete Task
+    const deleteTask = (id) => {
+      setTasks(tasks.filter((task) => task.id !== id))
+    };
+
   const name = 'Matthew'; 
-  
+
   return (
     <div className='container'>
       <Header title='Task Tracker' name={name} />
-      <Tasks tasks={tasks} />
+      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} /> : 'No Tasks Upcoming!'}
     </div>
   );
 }
