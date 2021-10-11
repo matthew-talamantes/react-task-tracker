@@ -5,14 +5,10 @@ import Button from './Button'
 
 const Header = (props) => {
 
-    const onClick = () => {
-        window.alert("I've Been Clicked!");
-    };
-
     return (
         <header className='header'>
             <h1>{(props.name) ? <>{props.title} By {props.name}</> : props.title}</h1>
-            <Button text='Add' color='green' onClick={onClick} />
+            <Button text={`${!props.showAddTask ? 'Add' : 'Close'}`} color={!props.showAddTask ? 'green' : 'red'} onClick={props.onAdd} />
         </header>
     )
 }

@@ -27,6 +27,8 @@ function App() {
     }
     ]);
 
+    const [showAddTask, setShowAddTask] = React.useState(false);
+
     // Add Task
     const addTask = (task) => {
       const id = Math.floor(Math.random() * 10000) + 1;
@@ -48,8 +50,8 @@ function App() {
 
   return (
     <div className='container'>
-      <Header title='Task Tracker' name={name} />
-      <AddTask onAdd={addTask} />
+      <Header title='Task Tracker' name={name} onAdd={() => setShowAddTask(!showAddTask)} showAddTask={showAddTask} />
+      {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No Tasks Upcoming!'}
     </div>
   );
